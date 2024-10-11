@@ -43,7 +43,7 @@ class StockOpnameResource extends Resource
                     ->required()
                     ->default(now())
                     ->closeOnDateSelection()
-                    ->native(false)
+                    ->native(true)
                     ->label(__('Date')),
             ]);
     }
@@ -78,13 +78,13 @@ class StockOpnameResource extends Resource
                 Filter::make('date')
                     ->form([
                         DatePicker::make('start_date')
-                            ->native(false)
+                            ->native(true)
                             ->format('Y-m-d')
                             ->timezone(Profile::get()->timezone)
                             ->date()
                             ->closeOnDateSelection(),
                         DatePicker::make('end_date')
-                            ->native(false)
+                            ->native(true)
                             ->format('Y-m-d')
                             ->timezone(Profile::get()->timezone)
                             ->date()

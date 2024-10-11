@@ -49,14 +49,14 @@ class ProductReport extends Page implements HasActions, HasForms
                 ->closeOnDateSelection()
                 ->required()
                 ->default(now())
-                ->native(false),
+                ->native(true),
             DatePicker::make('end_date')
                 ->translateLabel()
                 ->date()
                 ->required()
                 ->closeOnDateSelection()
                 ->default(now())
-                ->native(false),
+                ->native(true),
         ])
             ->columns(2)
             ->statePath('data');

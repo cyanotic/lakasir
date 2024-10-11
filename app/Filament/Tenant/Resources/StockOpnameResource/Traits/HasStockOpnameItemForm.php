@@ -36,6 +36,7 @@ trait HasStockOpnameItemForm
             Select::make('adjustment_type')
                 ->translateLabel()
                 ->default('broken')
+                ->native(false)
                 ->live()
                 ->afterStateUpdated(function (Set $set, Get $get, ?string $state) {
                     if (! $state) {

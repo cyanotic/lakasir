@@ -39,6 +39,7 @@ class About extends Model
                     'pharmacy' => __('Pharmacy'),
                     'other' => __('Other'),
                 ])
+                ->native(false)
                 ->live()
                 ->required(),
             TextInput::make('other_business_type')
@@ -54,6 +55,7 @@ class About extends Model
                 ->options([
                     'IDR' => 'IDR',
                 ])
+                ->native(false)
                 ->translateLabel(),
             FileUpload::make('photo')
                 ->imageResizeMode('cover')

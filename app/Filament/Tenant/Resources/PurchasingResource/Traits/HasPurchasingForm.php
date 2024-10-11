@@ -41,7 +41,7 @@ trait HasPurchasingForm
             DatePicker::make('expired')
                 ->rule('after:now')
                 ->closeOnDateSelection()
-                ->native(false)
+                ->native(true)
                 ->date(),
             TextInput::make('initial_price')
                 ->prefix(Setting::get('currency', 'IDR'))

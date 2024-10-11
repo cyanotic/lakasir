@@ -57,6 +57,7 @@ class PurchasingResource extends Resource
                 Select::make('payment_method_id')
                     ->relationship(name: 'paymentMethod', titleAttribute: 'name')
                     ->translateLabel()
+                    ->native(false)
                     ->required(),
                 TextInput::make('supplier_phone_number')
                     ->translateLabel()
@@ -65,12 +66,12 @@ class PurchasingResource extends Resource
                     ->closeOnDateSelection()
                     ->default(now())
                     ->translateLabel()
-                    ->native(false)
+                    ->native(true)
                     ->required(),
                 DatePicker::make('due_date')
                     ->translateLabel()
                     ->closeOnDateSelection()
-                    ->native(false)
+                    ->native(true)
                     ->required(),
                 FileUpload::make('image')
                     ->translateLabel()
@@ -137,6 +138,7 @@ class PurchasingResource extends Resource
                         ->form([
                             Select::make('status')
                                 ->required()
+                                ->native(false)
                                 ->options(Arr::where(PurchasingStatus::all(), function ($key) {
                                     if ($key == PurchasingStatus::approved) {
                                         return can('approve purchasing');
@@ -164,13 +166,13 @@ class PurchasingResource extends Resource
                 Filter::make('date')
                     ->form([
                         DatePicker::make('start_date')
-                            ->native(false)
+                            ->native(true)
                             ->format('Y-m-d')
                             ->timezone(Profile::get()->timezone)
                             ->date()
                             ->closeOnDateSelection(),
                         DatePicker::make('end_date')
-                            ->native(false)
+                            ->native(true)
                             ->format('Y-m-d')
                             ->timezone(Profile::get()->timezone)
                             ->date()

@@ -94,7 +94,8 @@ class GeneralSetting extends Page implements HasActions, HasForms
                                     20 => 20,
                                     50 => 50,
                                 ])
-                                ->translateLabel(),
+                                ->translateLabel()
+                                ->native(false),
                             TextInput::make('default_tax')
                                 ->numeric()
                                 ->suffix('%')

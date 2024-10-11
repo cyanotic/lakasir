@@ -32,7 +32,8 @@ class MemberResource extends Resource
                         'sim' => 'Sim',
                         'ktp' => 'Ktp',
                         'other' => __('Other'),
-                    ]),
+                    ])
+                    ->native(false),
                 TextInput::make('identity_number')
                     ->label(__('Identity number'))
                     ->required(),

@@ -55,6 +55,8 @@ class UserResource extends Resource
                     ->label('Roles')
                     ->default(1)
                     ->visible(hasFeatureAndPermission(Role::class))
+                    ->required()
+                    ->native(false)
                     ->relationship('roles', 'name'),
             ]);
     }

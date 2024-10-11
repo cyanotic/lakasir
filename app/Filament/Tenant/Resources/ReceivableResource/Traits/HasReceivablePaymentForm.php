@@ -18,7 +18,8 @@ trait HasReceivablePaymentForm
             Select::make('payment_method_id')
                 ->label(__('Payment method'))
                 ->options(PaymentMethod::query()->where('is_credit', 'false')->pluck('name', 'id'))
-                ->required(),
+                ->required()
+                ->native(false),
             TextInput::make('amount')
                 ->translateLabel()
                 ->mask(RawJs::make('$money($input)'))
@@ -29,7 +30,7 @@ trait HasReceivablePaymentForm
             DatePicker::make('date')
                 ->translateLabel()
                 ->closeOnDateSelection()
-                ->native(false)
+                ->native(true)
                 ->required(),
         ];
     }

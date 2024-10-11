@@ -143,6 +143,7 @@ class Cashier extends Page implements HasForms, HasTable
                         'id' => 'memberSelect',
                         'class' => 'hidden',
                     ])
+                    ->native(false)
                     ->searchable(),
                 RichEditor::make('note')
                     ->hiddenLabel()

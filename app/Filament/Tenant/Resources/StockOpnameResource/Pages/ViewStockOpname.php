@@ -56,7 +56,8 @@ class ViewStockOpname extends ViewRecord
                             }
 
                             return true;
-                        })),
+                        }))
+                        ->native(false),
                 ])
                 ->action(function ($data, StockOpname $so, StockOpnameService $stockOpnameService) {
                     $stockOpnameService->updateStatus($so, $data['status']);

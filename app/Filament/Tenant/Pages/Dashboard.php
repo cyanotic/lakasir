@@ -18,9 +18,9 @@ class Dashboard extends BaseDashboard
     //         FilterAction::make()
     //             ->form([
     //                 DatePicker::make('startDate')
-    //                     ->native(false),
+    //                     ->native(true),
     //                 DatePicker::make('endDate')
-    //                     ->native(false),
+    //                     ->native(true),
     //             ]),
     //     ];
     // }

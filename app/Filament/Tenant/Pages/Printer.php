@@ -44,6 +44,7 @@ class Printer extends Page implements HasActions, HasForms
                     // 'bluetooth' => 'Bluetooh',
                     'usb' => 'USB',
                 ])
+                ->native(false)
                 ->translateLabel(),
             Grid::make(columns: 3)
                 ->schema([

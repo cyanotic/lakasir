@@ -132,6 +132,7 @@ trait HasProductForm
                 'product' => 'Product',
                 'service' => 'Service',
             ])
+            ->native(false)
             ->visible(Feature::active(ProductType::class))
             ->afterStateUpdated(function (mixed $state, Set $set) {
                 if ($state == 'service') {
@@ -172,7 +173,7 @@ trait HasProductForm
                 return Feature::active(ProductExpired::class) && $operation == 'create';
             })
             ->rule('after:now')
-            ->required()
-            ->native(false);
+            // ->required()
+            ->native(true);
     }
 }

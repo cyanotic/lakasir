@@ -101,7 +101,8 @@ class PrintLabel extends Page implements HasForms
                             ->required($this->record != null)
                             ->translateLabel()
                             ->options(Product::pluck('name', 'id'))
-                            ->searchable(['name']),
+                            ->searchable(['name'])
+                            ->native(false),
                         TextInput::make('qty')
                             ->numeric()
                             ->extraAttributes([
@@ -121,7 +122,8 @@ class PrintLabel extends Page implements HasForms
                                 4 => 4,
                             ])
                             ->default(3)
-                            ->translateLabel(),
+                            ->translateLabel()
+                            ->native(false),
                         TextInput::make('vertical_gap')
                             ->hint(__('Pixels'))
                             ->extraAttributes([

@@ -69,6 +69,7 @@ class RegisterTenantForm extends Component implements HasForms
                                     'pharmacy' => __('Pharmacy'),
                                     'other' => __('Other'),
                                 ])
+                                ->native(false)
                                 ->live()
                                 ->required(),
                             TextInput::make('other_business_type')

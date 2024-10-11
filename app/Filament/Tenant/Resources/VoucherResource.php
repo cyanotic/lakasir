@@ -47,6 +47,7 @@ class VoucherResource extends Resource
                         'percentage' => __('Percentage'),
                         'flat' => __('Flat'),
                     ])
+                    ->native(false)
                     ->required(),
                 TextInput::make('nominal')
                     ->numeric()
@@ -62,11 +63,11 @@ class VoucherResource extends Resource
                     ->label(__('Kuota'))
                     ->required(),
                 DatePicker::make('start_date')
-                    ->native(false)
+                    ->native(true)
                     ->translateLabel()
                     ->required(),
                 DatePicker::make('expired')
-                    ->native(false)
+                    ->native(true)
                     ->translateLabel()
                     ->gte('start_date')
                     ->required(),

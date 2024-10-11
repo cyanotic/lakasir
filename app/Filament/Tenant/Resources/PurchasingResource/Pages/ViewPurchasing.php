@@ -37,6 +37,7 @@ class ViewPurchasing extends ViewRecord
                     ->form([
                         Select::make('status')
                             ->required()
+                            ->native(false)
                             ->default($this->record->status)
                             ->options(Arr::where(PurchasingStatus::all(), function ($key) {
                                 if ($key == PurchasingStatus::approved) {
