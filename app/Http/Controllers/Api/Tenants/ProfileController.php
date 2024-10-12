@@ -47,7 +47,7 @@ class ProfileController extends Controller
             if ($request->filled('photo_url') && $request->photo_url !== $profile->photo) {
                 /** @var \App\Models\Tenants\UploadedFile $tmpFile */
                 $tmpFile = UploadedFile::where('url', $request->photo_url)->first();
-                $url = $tmpFile->moveToPuplic('profile', $profile->photo ? Str::of($profile->photo)->after('profile/') : null);
+                $url = $tmpFile->moveToPublic('profile', $profile->photo ? Str::of($profile->photo)->after('profile/') : null);
                 $profile->update([
                     'photo' => $url,
                 ]);

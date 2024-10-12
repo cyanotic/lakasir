@@ -25,7 +25,7 @@ class UploadedFile extends Model
         'disk',
     ];
 
-    public function moveToPuplic($path, $existingUrl = null): string
+    public function moveToPublic($path, $existingUrl = null): string
     {
         $tmpFile = $this;
         if ($tmpFile && Storage::disk('tmp')->exists($tmpFile->name)) {

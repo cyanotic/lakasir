@@ -196,7 +196,7 @@ class GeneralSetting extends Page implements HasActions, HasForms
                 $tmpFile = UploadedFile::where('url', $data['photo_url'])->first();
                 $url = $data['photo_url'];
                 if ($tmpFile) {
-                    $url = $tmpFile->moveToPuplic('profile', $profile->photo ? Str::of($profile->photo)->after('profile/') : null);
+                    $url = $tmpFile->moveToPublic('profile', $profile->photo ? Str::of($profile->photo)->after('profile/') : null);
                 }
                 $profile->update([
                     'photo' => $url,

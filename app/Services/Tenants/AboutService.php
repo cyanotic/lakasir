@@ -34,7 +34,7 @@ class AboutService
             $tmpFile = UploadedFile::where('url', $data['photo_url'])->first();
             $url = $data['photo_url'];
             if ($tmpFile) {
-                $url = $tmpFile->moveToPuplic('profile', $about->photo ? Str::of($about->photo)->after('profile/') : null);
+                $url = $tmpFile->moveToPublic('profile', $about->photo ? Str::of($about->photo)->after('profile/') : null);
             }
             $about->update([
                 'photo' => $url,

@@ -16,7 +16,7 @@ class ProductService
         $tmp = UploadedFile::whereIn('url', $heroImages)->get();
         /** @var UploadedFile $item */
         foreach ($tmp as $item) {
-            $url = $item->moveToPuplic('product');
+            $url = $item->moveToPublic('product');
             $uploadedHeroImages[] = $url;
         }
         foreach ($product->hero_images as $image) {
